@@ -1,0 +1,164 @@
+{
+  "kind": "build_request",
+  "title": "Home Glass Products Showcase Website",
+  "projectName": "GlassHome Studio",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a visually elegant visual theme for the entire site inspired by glass, light, and modern interior design — using clean whites, soft grays, and warm gold/champagne accents with a refined sans-serif typography and airy layout. Apply this theme consistently across all pages.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Create a website that show home usage glasses product"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Color palette uses white, soft gray, and gold/champagne tones with no blue or purple",
+        "Typography is a clean, modern sans-serif",
+        "The visual style feels consistent across all pages",
+        "Layout feels spacious and premium"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Create a homepage featuring a full-width hero section with a tagline about home glass products, a featured products section highlighting items like mirrors, windows, slider doors, and glass ornaments, and a brief brand introduction section.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "show home usage glasses product like mirror , windows , slider doors or etc ornament related to glasses"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Hero section spans full width with headline and subheading",
+        "Featured products section displays at least 4 glass product cards",
+        "Brand introduction section is visible on homepage",
+        "Page is responsive on mobile and desktop"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Build a product catalog page with category filtering. Categories must include: Mirrors, Windows, Slider Doors, Glass Doors, Glass Ornaments/Decor, and Partition Walls. Each product card must show a product image, name, category, and short description.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "mirror , windows , slider doors or etc ornament related to glasses"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All product categories are accessible via filter tabs or sidebar",
+        "Filtering by category updates the product grid without page reload",
+        "Each card shows image, name, category label, and short description",
+        "Grid is responsive — 1 column on mobile, 2–3 on tablet, 3–4 on desktop"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Build a product detail page that displays a larger product image, full product name, category, detailed description, dimensions/specifications fields, and a 'Request a Quote' or 'Contact Us' call-to-action button.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "show home usage glasses product"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Clicking a product card navigates to its detail page",
+        "Detail page shows large image, full description, and specifications",
+        "A clear call-to-action button is present (e.g., 'Request a Quote')",
+        "Back navigation returns to the catalog"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Define and store all product data in the Motoko backend. Each product record must include: id, name, category, shortDescription, fullDescription, specs (key-value pairs), and imagePath. Expose query functions to fetch all products and fetch a single product by id, as well as a function to filter products by category.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "mirror , windows , slider doors or etc ornament related to glasses"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backend stores at least 10 sample glass products across all categories",
+        "getAllProducts() returns full list of products",
+        "getProductById(id) returns a single product or null",
+        "getProductsByCategory(category) returns filtered list",
+        "All data fields (id, name, category, shortDescription, fullDescription, specs, imagePath) are present in each record"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Implement a site-wide navigation bar with the brand logo/name 'GlassHome Studio', links to Home and Catalog pages, and a footer with a short tagline and copyright notice.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Create a website"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Navigation bar is visible on all pages",
+        "Brand name is displayed in the nav",
+        "Navigation links to Home and Catalog work correctly",
+        "Footer is present on all pages with tagline and copyright text",
+        "Nav collapses gracefully on mobile (hamburger or similar)"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Render generated product and hero images from frontend/public/assets/generated as static assets displayed on the homepage hero, product cards, and product detail pages.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Hero section uses the generated hero banner image",
+        "Each product category has a representative image shown on its card",
+        "Images load from frontend/public/assets/generated without backend involvement"
+      ]
+    }
+  ],
+  "constraints": [
+    "All product data must be stored and served from the Motoko backend actor",
+    "No external APIs, databases, or third-party services",
+    "Immutable frontend paths (hooks, main.tsx, ui components) must not be modified"
+  ],
+  "nonGoals": [
+    "User accounts or authentication",
+    "Shopping cart or e-commerce checkout",
+    "Real-time features or chat",
+    "Admin panel for product management",
+    "Payment processing"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Wide panoramic hero banner showing an elegant modern living room interior with glass elements including large windows, a decorative mirror, and a glass slider door, natural light flooding in, warm gold and white tones (hero-banner.dim_1400x600.png)",
+      "Decorative wall mirror with a slim gold frame against a soft white wall, studio product shot (product-mirror.dim_600x600.png)",
+      "Modern floor-to-ceiling glass window panel in a bright interior setting, studio product shot (product-window.dim_600x600.png)",
+      "Sleek glass sliding door with matte aluminum frame in a contemporary home hallway, studio product shot (product-slider-door.dim_600x600.png)",
+      "Elegant glass partition wall panel with frosted lower half, bright office or home interior, studio product shot (product-partition.dim_600x600.png)",
+      "Decorative glass ornament centerpiece on a marble tabletop, warm gold light, studio product shot (product-ornament.dim_600x600.png)",
+      "Modern glass interior door with thin black frame and clear glass panels, studio product shot (product-glass-door.dim_600x600.png)",
+      "Brand logo mark — stylized letter G made of overlapping translucent glass shapes in gold and white on transparent background (logo-icon.dim_128x128.png)"
+    ],
+    "edits": []
+  }
+}

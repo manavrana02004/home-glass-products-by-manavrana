@@ -1,0 +1,67 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-28T06:15:09.626Z",
+  "summary": "The diff implements the vast majority of the requirements well. The backend Motoko actor exposes getAllProducts, getProductsByCategory, and a getProduct function (though named differently from spec). The frontend has all required pages, navigation, footer, category filtering, product cards, product detail, hero section, brand intro, and images loaded from the correct path. A few minor gaps exist: getProductById is named getProduct in the backend, the backend does not pre-populate data (relies on frontend seeding), and the backend traps instead of returning null on missing product. The main.tsx file was modified which the constraints say should not be modified.",
+  "missing_requirements": [
+    {
+      "id": "REQ-5",
+      "requirement": "getProductById(id) returns a single product or null",
+      "reason": "The backend exposes getProduct(id) which traps when a product is not found rather than returning null or an optional. The spec requires getProductById returning null on miss.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "requirement": "Backend stores at least 10 sample glass products across all categories",
+      "reason": "The backend actor itself contains no pre-seeded product data. Seeding is done via the frontend HomePage via addProduct mutations. The backend alone does not independently store the required 10+ sample products.",
+      "evidence": [
+        "backend/main.mo",
+        "frontend/src/pages/HomePage.tsx"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "addProduct mutation exposed as a public shared function on the backend actor",
+      "reason": "The spec only requires query functions (getAllProducts, getProductById, getProductsByCategory). An addProduct mutation function was added to the backend without being requested, exposing unauthenticated write access.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "description": "caffeine.ai attribution link with UTM tracking added to the footer",
+      "reason": "The build request does not mention any caffeine.ai attribution or external links in the footer. This was added without being requested.",
+      "evidence": [
+        "frontend/src/components/Footer.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.82,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/CategoryFilter.tsx",
+    "frontend/src/components/Footer.tsx",
+    "frontend/src/components/Layout.tsx",
+    "frontend/src/components/Navigation.tsx",
+    "frontend/src/components/ProductCard.tsx",
+    "frontend/src/components/ProductSkeleton.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/lib/seedData.ts",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/CatalogPage.tsx",
+    "frontend/src/pages/HomePage.tsx",
+    "frontend/src/pages/ProductDetailPage.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

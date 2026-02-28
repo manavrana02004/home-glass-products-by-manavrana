@@ -1,0 +1,99 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "A website showcasing home usage glass products such as mirrors, windows, slider doors, and other glass-related ornaments/decor.",
+  "architectural_notes": [
+    "Static website showcasing home glass products; no backend required initially"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Wide panoramic hero banner showing an elegant modern living room interior with glass elements including large windows, a decorative mirror, and a glass slider door, natural light flooding in, warm gold and white tones (hero-banner.dim_1400x600.png)\n- Decorative wall mirror with a slim gold frame against a soft white wall, studio product shot (product-mirror.dim_600x600.png)\n- Modern floor-to-ceiling glass window panel in a bright interior setting, studio product shot (product-window.dim_600x600.png)\n- Sleek glass sliding door with matte aluminum frame in a contemporary home hallway, studio product shot (product-slider-door.dim_600x600.png)\n- Elegant glass partition wall panel with frosted lower half, bright office or home interior, studio product shot (product-partition.dim_600x600.png)\n- Decorative glass ornament centerpiece on a marble tabletop, warm gold light, studio product shot (product-ornament.dim_600x600.png)\n- Modern glass interior door with thin black frame and clear glass panels, studio product shot (product-glass-door.dim_600x600.png)\n- Brand logo mark — stylized letter G made of overlapping translucent glass shapes in gold and white on transparent background (logo-icon.dim_128x128.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-visually-elegant-visual-theme-for-the-entire-site-inspired-by-glass-light-and-modern-interior-design-using-clean-whites-soft-grays-and-warm-gold-champagne-accents-with-a-refined-sans-serif-typography-and-airy-layout-apply-this-theme-consistently-across-all-pages",
+      "title": "Create a visually elegant visual theme for the entire site inspired by glass, light, and modern interior design — using clean whites, soft grays, and warm gold/champagne accents with a refined sans-serif typography and airy layout. Apply this theme consistently across all pages.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-homepage-featuring-a-full-width-hero-section-with-a-tagline-about-home-glass-products-a-featured-products-section-highlighting-items-like-mirrors-windows-slider-doors-and-glass-ornaments-and-a-brief-brand-introduction-section",
+      "title": "Create a homepage featuring a full-width hero section with a tagline about home glass products, a featured products section highlighting items like mirrors, windows, slider doors, and glass ornaments, and a brief brand introduction section.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-product-catalog-page-with-category-filtering-categories-must-include-mirrors-windows-slider-doors-glass-doors-glass-ornaments-decor-and-partition-walls-each-product-card-must-show-a-product-image-name-category-and-short-description",
+      "title": "Build a product catalog page with category filtering. Categories must include: Mirrors, Windows, Slider Doors, Glass Doors, Glass Ornaments/Decor, and Partition Walls. Each product card must show a product image, name, category, and short description.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-product-detail-page-that-displays-a-larger-product-image-full-product-name-category-detailed-description-dimensions-specifications-fields-and-a-request-a-quote-or-contact-us-call-to-action-button",
+      "title": "Build a product detail page that displays a larger product image, full product name, category, detailed description, dimensions/specifications fields, and a 'Request a Quote' or 'Contact Us' call-to-action button.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-site-wide-navigation-bar-with-the-brand-logo-name-glasshome-studio-links-to-home-and-catalog-pages-and-a-footer-with-a-short-tagline-and-copyright-notice",
+      "title": "Implement a site-wide navigation bar with the brand logo/name 'GlassHome Studio', links to Home and Catalog pages, and a footer with a short tagline and copyright notice.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-render-generated-product-and-hero-images-from-frontend-public-assets-generated-as-static-assets-displayed-on-the-homepage-hero-product-cards-and-product-detail-pages",
+      "title": "Render generated product and hero images from frontend/public/assets/generated as static assets displayed on the homepage hero, product cards, and product detail pages.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Homepage with featured glass products (mirrors, windows, slider doors, ornaments)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Product catalog/listing page with categories for different glass product types",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Product detail page with images and description",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Navigation and branding for a glass/home decor store",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Define and store all product data in the Motoko backend. Each product record must include: id, name, category, shortDescription, fullDescription, specs (key-value pairs), and imagePath. Expose query functions to fetch all products and fetch a single product by id, as well as a function to filter products by category.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Home Glass Products",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

@@ -1,0 +1,174 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Home Glass Products Showcase Website Frontend",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Create a visually elegant theme inspired by glass, light, and modern interior design with clean whites, soft grays, and warm gold/champagne accents",
+      "acceptanceCriteria": [
+        "Color palette uses white, soft gray, and gold/champagne tones with no blue or purple",
+        "Typography is a clean, modern sans-serif",
+        "The visual style feels consistent across all pages",
+        "Layout feels spacious and premium"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Define the global theme with CSS custom properties for the color palette (white, soft gray, gold/champagne accents), set base typography to a clean sans-serif font family, and establish spacing/layout variables for an airy, premium feel. Apply theme consistently to all semantic elements."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend the Tailwind theme with custom colors matching the glass-inspired palette (soft grays, warm gold/champagne), configure typography with a modern sans-serif font stack, and set spacing scale to support spacious layouts."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Create a homepage with full-width hero section, featured products section, and brand introduction",
+      "acceptanceCriteria": [
+        "Hero section spans full width with headline and subheading",
+        "Featured products section displays at least 4 glass product cards",
+        "Brand introduction section is visible on homepage",
+        "Page is responsive on mobile and desktop"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "create",
+          "description": "Create the homepage component with three sections: (1) Full-width hero with tagline about home glass products using the generated image frontend/public/assets/generated/hero-banner.dim_1400x600.png as background, (2) Featured products grid showcasing glass product cards (mirrors, windows, slider doors, ornaments), (3) Brief brand introduction section about GlassHome Studio. Fetch products from backend using getAllProducts() and display the first 4-6 as featured. Ensure responsive layout with mobile-first approach."
+        },
+        {
+          "path": "frontend/src/components/ProductCard.tsx",
+          "operation": "create",
+          "description": "Create a reusable product card component that displays product image (from frontend/public/assets/generated/), name, category, and short description. Card should be clickable and navigate to product detail page. Use generated product images: product-mirror.dim_600x600.png, product-window.dim_600x600.png, product-slider-door.dim_600x600.png, product-partition.dim_600x600.png, product-ornament.dim_600x600.png, product-glass-door.dim_600x600.png. Apply theme styling with hover effects and responsive behavior."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire the HomePage component into the router at the root path ('/'). Ensure the Layout wrapper includes the navigation and footer components around all routes."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Build a product catalog page with category filtering for glass products",
+      "acceptanceCriteria": [
+        "All product categories are accessible via filter tabs or sidebar",
+        "Filtering by category updates the product grid without page reload",
+        "Each card shows image, name, category label, and short description",
+        "Grid is responsive — 1 column on mobile, 2–3 on tablet, 3–4 on desktop"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/CatalogPage.tsx",
+          "operation": "create",
+          "description": "Create the catalog page component with category filter controls (tabs or sidebar) for all categories: Mirrors, Windows, Slider Doors, Glass Doors, Glass Ornaments/Decor, and Partition Walls. Fetch products using getAllProducts() or getProductsByCategory() based on selected filter. Display products in a responsive grid using the ProductCard component. Implement client-side filtering state that updates the grid without page reload. Grid must show 1 column on mobile, 2-3 on tablet, 3-4 on desktop."
+        },
+        {
+          "path": "frontend/src/components/CategoryFilter.tsx",
+          "operation": "create",
+          "description": "Create a category filter component (tabs or sidebar) that displays all product categories and allows users to select a category or view all products. Emit filter change events to parent component. Style with theme colors and ensure mobile-responsive collapse/expand behavior."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire the CatalogPage component into the router at '/catalog'. Add navigation link in the Layout component's navigation bar."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Build a product detail page showing full product information with quote request call-to-action",
+      "acceptanceCriteria": [
+        "Clicking a product card navigates to its detail page",
+        "Detail page shows large image, full description, and specifications",
+        "A clear call-to-action button is present (e.g., 'Request a Quote')",
+        "Back navigation returns to the catalog"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/ProductDetailPage.tsx",
+          "operation": "create",
+          "description": "Create the product detail page component that fetches a single product using getProduct(id) based on route parameter. Display large product image from frontend/public/assets/generated/, full product name, category, detailed description, and specifications table (key-value pairs from specs field). Include a prominent 'Request a Quote' or 'Contact Us' call-to-action button. Provide back navigation to catalog. Use responsive layout with image on left/top and details on right/bottom."
+        },
+        {
+          "path": "frontend/src/components/ProductCard.tsx",
+          "operation": "modify",
+          "description": "Update the ProductCard component to wrap content in a clickable link/button that navigates to the product detail page route ('/product/:id') using the product's id."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire the ProductDetailPage component into the router at '/product/:id' to accept dynamic product id parameter."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Implement site-wide navigation bar and footer with brand identity",
+      "acceptanceCriteria": [
+        "Navigation bar is visible on all pages",
+        "Brand name is displayed in the nav",
+        "Navigation links to Home and Catalog work correctly",
+        "Footer is present on all pages with tagline and copyright text",
+        "Nav collapses gracefully on mobile (hamburger or similar)"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Navigation.tsx",
+          "operation": "create",
+          "description": "Create a navigation bar component displaying the brand name 'GlassHome Studio' with the generated logo icon frontend/public/assets/generated/logo-icon.dim_128x128.png on the left, and navigation links to Home ('/') and Catalog ('/catalog'). Implement mobile-responsive hamburger menu that collapses links on small screens. Style with theme colors and ensure visibility on all pages via Layout wrapper."
+        },
+        {
+          "path": "frontend/src/components/Footer.tsx",
+          "operation": "create",
+          "description": "Create a footer component with a short tagline about GlassHome Studio's glass products and a copyright notice. Style with theme colors to match the site's elegant aesthetic. Footer should span full width and be visible on all pages via Layout wrapper."
+        },
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "create",
+          "description": "Create a Layout component that wraps page content with the Navigation component at the top and Footer component at the bottom. This ensures consistent navigation and footer presence across all pages."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wrap all route components with the Layout component to ensure Navigation and Footer appear on every page."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Render generated product and hero images as static assets throughout the site",
+      "acceptanceCriteria": [
+        "Hero section uses the generated hero banner image",
+        "Each product category has a representative image shown on its card",
+        "Images load from frontend/public/assets/generated without backend involvement"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Ensure the hero section uses the generated hero banner image at frontend/public/assets/generated/hero-banner.dim_1400x600.png as the background or featured image. Reference the file using the exact workspace path."
+        },
+        {
+          "path": "frontend/src/components/ProductCard.tsx",
+          "operation": "modify",
+          "description": "Update the ProductCard component to render product images from frontend/public/assets/generated/ using the imagePath field from product data. Map category-specific generated images: product-mirror.dim_600x600.png for Mirrors, product-window.dim_600x600.png for Windows, product-slider-door.dim_600x600.png for Slider Doors, product-glass-door.dim_600x600.png for Glass Doors, product-ornament.dim_600x600.png for Glass Ornaments/Decor, and product-partition.dim_600x600.png for Partition Walls. Images load as static assets without backend involvement."
+        },
+        {
+          "path": "frontend/src/pages/ProductDetailPage.tsx",
+          "operation": "modify",
+          "description": "Ensure the product detail page displays the large product image from frontend/public/assets/generated/ using the imagePath field from the fetched product. Reference the exact generated filenames with dimensions."
+        },
+        {
+          "path": "frontend/src/components/Navigation.tsx",
+          "operation": "modify",
+          "description": "Display the brand logo icon from frontend/public/assets/generated/logo-icon.dim_128x128.png next to the 'GlassHome Studio' brand name in the navigation bar."
+        }
+      ]
+    }
+  ]
+}

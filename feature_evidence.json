@@ -1,0 +1,126 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-visually-elegant-visual-theme-for-the-entire-site-inspired-by-glass-light-and-modern-interior-design-using-clean-whites-soft-grays-and-warm-gold-champagne-accents-with-a-refined-sans-serif-typography-and-airy-layout-apply-this-theme-consistently-across-all-pages",
+      "featureTitle": "Create a visually elegant visual theme for the entire site inspired by glass, light, and modern interior design — using clean whites, soft grays, and warm gold/champagne accents with a refined sans-serif typography and airy layout. Apply this theme consistently across all pages.",
+      "files": [
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-homepage-featuring-a-full-width-hero-section-with-a-tagline-about-home-glass-products-a-featured-products-section-highlighting-items-like-mirrors-windows-slider-doors-and-glass-ornaments-and-a-brief-brand-introduction-section",
+      "featureTitle": "Create a homepage featuring a full-width hero section with a tagline about home glass products, a featured products section highlighting items like mirrors, windows, slider doors, and glass ornaments, and a brief brand introduction section.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/ProductCard.tsx",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-product-catalog-page-with-category-filtering-categories-must-include-mirrors-windows-slider-doors-glass-doors-glass-ornaments-decor-and-partition-walls-each-product-card-must-show-a-product-image-name-category-and-short-description",
+      "featureTitle": "Build a product catalog page with category filtering. Categories must include: Mirrors, Windows, Slider Doors, Glass Doors, Glass Ornaments/Decor, and Partition Walls. Each product card must show a product image, name, category, and short description.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/CategoryFilter.tsx",
+        "frontend/src/pages/CatalogPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-product-detail-page-that-displays-a-larger-product-image-full-product-name-category-detailed-description-dimensions-specifications-fields-and-a-request-a-quote-or-contact-us-call-to-action-button",
+      "featureTitle": "Build a product detail page that displays a larger product image, full product name, category, detailed description, dimensions/specifications fields, and a 'Request a Quote' or 'Contact Us' call-to-action button.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/ProductCard.tsx",
+        "frontend/src/pages/ProductDetailPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-site-wide-navigation-bar-with-the-brand-logo-name-glasshome-studio-links-to-home-and-catalog-pages-and-a-footer-with-a-short-tagline-and-copyright-notice",
+      "featureTitle": "Implement a site-wide navigation bar with the brand logo/name 'GlassHome Studio', links to Home and Catalog pages, and a footer with a short tagline and copyright notice.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Footer.tsx",
+        "frontend/src/components/Layout.tsx",
+        "frontend/src/components/Navigation.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-render-generated-product-and-hero-images-from-frontend-public-assets-generated-as-static-assets-displayed-on-the-homepage-hero-product-cards-and-product-detail-pages",
+      "featureTitle": "Render generated product and hero images from frontend/public/assets/generated as static assets displayed on the homepage hero, product cards, and product detail pages.",
+      "files": [
+        "frontend/src/components/Navigation.tsx",
+        "frontend/src/components/ProductCard.tsx",
+        "frontend/src/pages/HomePage.tsx",
+        "frontend/src/pages/ProductDetailPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

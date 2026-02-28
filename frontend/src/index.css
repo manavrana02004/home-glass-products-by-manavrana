@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.25rem;
+
+    /* Glass-inspired palette: warm whites, soft grays, champagne gold */
+    --background: 0.98 0.005 85;
+    --foreground: 0.18 0.01 60;
+
+    --card: 0.99 0.003 80;
+    --card-foreground: 0.18 0.01 60;
+
+    --popover: 0.99 0.003 80;
+    --popover-foreground: 0.18 0.01 60;
+
+    /* Gold/champagne primary */
+    --primary: 0.62 0.08 75;
+    --primary-foreground: 0.99 0.003 80;
+
+    --secondary: 0.94 0.008 75;
+    --secondary-foreground: 0.25 0.015 60;
+
+    --muted: 0.93 0.006 75;
+    --muted-foreground: 0.52 0.015 65;
+
+    --accent: 0.88 0.025 80;
+    --accent-foreground: 0.25 0.015 60;
+
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    --border: 0.88 0.012 75;
+    --input: 0.88 0.012 75;
+    --ring: 0.62 0.08 75;
+
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+
+    --sidebar: 0.97 0.006 80;
+    --sidebar-foreground: 0.18 0.01 60;
+    --sidebar-primary: 0.62 0.08 75;
+    --sidebar-primary-foreground: 0.99 0.003 80;
+    --sidebar-accent: 0.93 0.008 75;
+    --sidebar-accent-foreground: 0.25 0.015 60;
+    --sidebar-border: 0.88 0.012 75;
+    --sidebar-ring: 0.62 0.08 75;
+
+    /* Custom tokens */
+    --gold: 0.62 0.08 75;
+    --gold-light: 0.82 0.055 80;
+    --gold-dark: 0.45 0.07 70;
+    --cream: 0.98 0.005 85;
+    --warm-gray: 0.55 0.012 65;
+  }
+
+  .dark {
+    --background: 0.14 0.01 60;
+    --foreground: 0.95 0.006 80;
+
+    --card: 0.18 0.012 60;
+    --card-foreground: 0.95 0.006 80;
+
+    --popover: 0.20 0.012 60;
+    --popover-foreground: 0.95 0.006 80;
+
+    --primary: 0.72 0.09 78;
+    --primary-foreground: 0.14 0.01 60;
+
+    --secondary: 0.24 0.015 60;
+    --secondary-foreground: 0.90 0.006 80;
+
+    --muted: 0.24 0.015 60;
+    --muted-foreground: 0.65 0.015 70;
+
+    --accent: 0.28 0.018 65;
+    --accent-foreground: 0.90 0.006 80;
+
+    --destructive: 0.704 0.191 22.216;
+    --destructive-foreground: 0.205 0 0;
+
+    --border: 1 0 0 / 10%;
+    --input: 1 0 0 / 15%;
+    --ring: 0.72 0.09 78;
+
+    --sidebar: 0.18 0.012 60;
+    --sidebar-foreground: 0.95 0.006 80;
+    --sidebar-primary: 0.72 0.09 78;
+    --sidebar-primary-foreground: 0.14 0.01 60;
+    --sidebar-accent: 0.24 0.015 60;
+    --sidebar-accent-foreground: 0.90 0.006 80;
+    --sidebar-border: 1 0 0 / 10%;
+    --sidebar-ring: 0.72 0.09 78;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.01em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .font-body {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+  }
+
+  .glass-card-dark {
+    background: rgba(30, 28, 25, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .text-gold {
+    color: oklch(var(--gold));
+  }
+
+  .bg-gold {
+    background-color: oklch(var(--gold));
+  }
+
+  .border-gold {
+    border-color: oklch(var(--gold));
+  }
+
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  }
+}
